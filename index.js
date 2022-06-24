@@ -35,10 +35,7 @@ let persons = [
       "number": "39-23-6423122"
     }
 ]
-/* const app = http.createServer((request, response) => {
-    response.writeHead(200, { 'Content-Type': 'application/json' })
-    response.end(JSON.stringify(persons, null, 2))
-  }) */
+
 
 app.get('/info', (request, response) => {
     var date = new Date();
@@ -98,26 +95,6 @@ app.get('/api/persons', (request, response) => {
       persons = persons.concat(person)
       response.json(person)
     }
-
-
-    /* if (!body.name || !body.number) {
-        return response.status(400).json({
-          error: 'name or number missing'
-        })
-      }
-     
-      const person = {
-        id: Math.floor(Math.random() * 100000),
-        name: body.name,
-        number: body.number,
-        
-      }
-    
-      person
-      .save()
-      .then(savedPerson => savedPerson.toJSON())
-      .then(savedAndFormattedPerson => response.json(savedAndFormattedPerson))
-      .catch(error => next(error)) */
   })
 
   const PORT = process.env.PORT || 3001
